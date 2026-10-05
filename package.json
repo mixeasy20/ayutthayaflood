@@ -1,0 +1,33 @@
+{
+  "name": "floodwatch-ayutthaya",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "predev": "node ./scripts/copy-maplibre-worker.mjs",
+    "dev": "next dev",
+    "prebuild": "node ./scripts/copy-maplibre-worker.mjs",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@google/genai": "^2.27.0",
+    "@supabase/supabase-js": "^2.117.2",
+    "lucide-react": "latest",
+    "maplibre-gl": "^6.11.2",
+    "next": "latest",
+    "openai": "^7.27.0",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.0.0"
+  }
+}
