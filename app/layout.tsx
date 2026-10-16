@@ -22,7 +22,18 @@ export const metadata: Metadata = {
   title: 'FloodWatch Ayutthaya',
   description: 'Flood forecasts and monitoring for Ayutthaya Province, Thailand.',
   manifest: '/manifest.webmanifest',
-  icons: { icon: '/icon.svg' },
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'FloodWatch',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
