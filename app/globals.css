@@ -20,8 +20,23 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'IBM Plex Sans Thai Looped', sans-serif; -webkit-font-smoothing: antialiased; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  touch-action: pan-x pan-y;
+}
+.maplibregl-map, .maplibregl-canvas-container {
+  touch-action: auto !important;
+}
 button, select, input, textarea { font: inherit; }
 button, a, select { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid rgba(99, 122, 88, .36); outline-offset: 2px; }
