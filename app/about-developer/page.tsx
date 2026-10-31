@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, BookOpen, Code2, Mail, Map, Sparkles } from 'lucide-react';
+import { ArrowLeft, BookOpen, Code2, Map, Sparkles } from 'lucide-react';
 
 type Tech = { name: string; note: string; mark: React.ReactNode };
 
@@ -27,10 +27,10 @@ export default function AboutDeveloperPage() {
   return (
     <main className="about-shell">
       <header className="about-top"><Link href="/" className="back-link"><ArrowLeft size={17}/>{th ? 'กลับสู่แผนที่' : 'Back to map'}</Link><div className="locale-switch" role="group" aria-label={th ? 'เลือกภาษา' : 'Select language'}><button className="btn" aria-pressed={th} onClick={() => { setLocale('th'); try { localStorage.setItem('floodwatch-language', 'th'); } catch {} }}>TH</button><button className="btn" aria-pressed={!th} onClick={() => { setLocale('en'); try { localStorage.setItem('floodwatch-language', 'en'); } catch {} }}>EN</button></div></header>
-      <section className="about-hero"><span className="about-eyebrow">FLOODWATCH AYUTTHAYA</span><h1>{th ? 'เกี่ยวกับผู้พัฒนา' : 'About the developer'}</h1><p>{th ? 'พื้นที่แนะนำผู้สร้างและที่มาของโครงการ แก้ไขข้อความในวงเล็บเหลี่ยมให้เป็นข้อมูลจริงก่อนเผยแพร่' : 'A space to introduce the creator and story behind this project. Replace the bracketed placeholders with verified details before publishing.'}</p></section>
+      <section className="about-hero"><span className="about-eyebrow">FLOODWATCH AYUTTHAYA</span><h1>{th ? 'เกี่ยวกับผู้พัฒนา' : 'About the developer'}</h1><p>{th ? 'ข้อมูลผู้พัฒนาและแรงบันดาลใจในการสร้างสรรค์โครงการเพื่อติดตามสถานการณ์น้ำท่วมจังหวัดพระนครศรีอยุธยา' : 'Information about the developer and the inspiration behind building FloodWatch Ayutthaya.'}</p></section>
       <section className="about-profile-grid" aria-label={th ? 'ข้อมูลผู้พัฒนา' : 'Developer details'}>
-        <article className="about-profile-card"><div className="profile-avatar" aria-hidden="true">FW</div><span className="about-eyebrow">{th ? 'ผู้พัฒนา' : 'DEVELOPER'}</span><h2>[Developer Name]</h2><p>[Education / Grade]</p><p>[School]</p><div className="placeholder-line"><BookOpen size={17}/><span>[About the Developer]</span></div></article>
-        <article className="about-story-card"><div className="section-kicker"><Sparkles size={16}/>{th ? 'ที่มาของโครงการ' : 'PROJECT STORY'}</div><h2>{th ? 'ทำไมจึงสร้าง FloodWatch' : 'Why I created FloodWatch'}</h2><p>[Why I Created FloodWatch]</p><div className="contact-placeholder"><Mail size={16}/>[Contact Information]</div></article>
+        <article className="about-profile-card"><div className="profile-avatar" aria-hidden="true">TR</div><span className="about-eyebrow">{th ? 'ผู้พัฒนา' : 'DEVELOPER'}</span><h2>{th ? 'ธรรมรัตน์' : 'Thamrat'}</h2><p>{th ? 'ชั้นมัธยมศึกษาปีที่ 6 (ม.6)' : 'Grade 12 (Mathayom 6)'}</p><p>{th ? 'โรงเรียนวิเชียรกลิ่นสุคนธ์อุปถัมภ์' : 'Wichian Klin Sukhon Upatham School'}</p><div className="placeholder-line"><BookOpen size={17}/><span>{th ? 'นักเรียนผู้มีความสนใจด้านเทคโนโลยีสารสนเทศ การพัฒนาเว็บแอปพลิเคชัน และระบบสารสนเทศภูมิศาสตร์ (GIS)' : 'A student passionate about software development, web applications, and GIS.'}</span></div></article>
+        <article className="about-story-card"><div className="section-kicker"><Sparkles size={16}/>{th ? 'ที่มาของโครงการ' : 'PROJECT STORY'}</div><h2>{th ? 'ทำไมจึงสร้าง FloodWatch' : 'Why I created FloodWatch'}</h2><p>{th ? 'เนื่องจากในพื้นที่จังหวัดพระนครศรีอยุธยาประสบกับสถานการณ์น้ำท่วมอยู่บ่อยครั้ง จึงเกิดแรงบันดาลใจในการออกแบบและพัฒนาเว็บไซต์นี้ขึ้นมา เพื่อติดตามเฝ้าระวังระดับน้ำ ปริมาณฝน และสถานการณ์น้ำท่วมอย่างแม่นยำ ช่วยให้ประชาชนและผู้เกี่ยวข้องสามารถเข้าถึงข้อมูลจริงได้อย่างรวดเร็วและเข้าใจง่าย' : 'Inspired by the recurring flood situations in Ayutthaya, this platform was created to monitor water levels, rainfall, and flood conditions accurately and transparently for the community.'}</p></article>
       </section>
       <section className="tech-section"><div className="section-kicker"><Code2 size={16}/>{th ? 'เทคโนโลยี' : 'TECHNOLOGIES'}</div><h2>{th ? 'เครื่องมือที่ใช้ในโครงการนี้' : 'Tools used in this project'}</h2><div className="tech-grid">{technologies.map((tech) => <article key={tech.name} className="tech-card">{tech.mark}<span><b>{tech.name}</b><small>{tech.note}</small></span></article>)}</div></section>
       <footer className="about-footer"><span>FloodWatch Ayutthaya</span><Link href="/">{th ? 'กลับไปดูสถานการณ์' : 'Return to situation map'}</Link></footer>
